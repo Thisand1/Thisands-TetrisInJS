@@ -1,0 +1,68 @@
+@keyframes rgbGlow {
+    0% { background-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+    33% { background-color: #00ff00; box-shadow: 0 0 20px #00ff00; }
+    66% { background-color: #0000ff; box-shadow: 0 0 20px #0000ff; }
+    100% { background-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+}
+
+.rgb-glow {
+    animation: rgbGlow 10s linear infinite;
+}
+
+.dark-theme {
+    background-color: #000;
+    color: #fff;
+}
+
+.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+.glow-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+.rgb-banner {
+    animation: rgbGlow 5s linear infinite;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.light-theme .glow-container {
+    background-color: rgba(200, 200, 200, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.light-theme #tetris-board,
+.light-theme #next-piece-canvas {
+    border-color: #000;
+}
+
+#pause-menu, #settings-menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+#pause-menu button, #settings-menu button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pause-menu button:hover, #settings-menu button:hover {
+    background-color: #45a049;
+}
+

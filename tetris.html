@@ -1,27 +1,123 @@
-<!-- Antes -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
-   ...
+    <link rel="stylesheet" href="glow.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            color: #fff;
+        }
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #tetris-board {
+            border: 2px solid #fff;
+        }
+        #next-piece {
+            margin-left: 20px;
+            text-align: center;
+        }
+        #next-piece-canvas {
+            border: 1px solid #fff;
+        }
+        #congratulations-banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            display: none;
+            z-index: 1000;
+        }
+        #pause-menu, #settings-menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            z-index: 1001;
+        }
+        #pause-menu button, #settings-menu button {
+            margin: 10px;
+            padding: 5px 10px;
+        }
+        .theme-option {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #rgb-theme { background: linear-gradient(to right, red, green, blue); }
+        #dark-theme { background-color: #333; }
+        #light-theme { background-color: #fff; }
+        #made-by {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            z-index: 1000;
+        }
+    </style>
 </head>
-<body>
-    <canvas id="tetris" width="240" height="400" class="tetris-canvas"></canvas>
-   ...
-</body>
-</html>
-
-<!-- Después -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tetris</title>
-   ...
-</head>
-<body>
-    <canvas id="tetris" width="240" height="400" class="tetris-canvas"></canvas>
-   ...
+<body class="rgb-glow">
+    <div id="game-container">
+        <div class="glow-container">
+            <canvas id="tetris-board"></canvas>
+            <div>
+                <p>Puntuación: <span id="score">0</span></p>
+            </div>
+        </div>
+        <div id="next-piece" class="glow-container">
+            <h3>Siguiente ficha:</h3>
+            <canvas id="next-piece-canvas" width="120" height="120"></canvas>
+        </div>
+    </div>
+    <div id="congratulations-banner" class="rgb-banner">
+        ¡Felicidades! Ganaste 1000 puntos :D
+    </div>
+    <div id="pause-menu">
+        <h2>Juego Pausado</h2>
+        <button id="resume-btn">Reanudar</button>
+        <button id="settings-btn">Configuraciones</button>
+    </div>
+    <div id="settings-menu">
+        <h2>Configuraciones</h2>
+        <h3>Tema:</h3>
+        <div>
+            <span class="theme-option" id="rgb-theme" title="RGB"></span>
+            <span class="theme-option" id="dark-theme" title="Oscuro"></span>
+            <span class="theme-option" id="light-theme" title="Claro"></span>
+        </div>
+        <button id="back-btn">Volver</button>
+    </div>
+    <div id="made-by">
+        Made by Thisand -  So much things coming soon :D
+    </div>
+    <script src="figures.js"></script>
+    <script src="tetris.js"></script>
+    <script src="server.js"></script>
 </body>
 </html>
