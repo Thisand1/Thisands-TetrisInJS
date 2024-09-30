@@ -1,6 +1,6 @@
 
 Thisands-TetrisInJS
-This repository contains a Tetris game created with HTML, CSS, and JavaScript. It offers the basic gameplay of falling blocks, where you can clear lines and try to achieve high scores.
+This repository contains a Tetris game created with HTML, CSS, JavaScript and Node.js obiously. It offers the basic gameplay of falling blocks, where you can clear lines and try to achieve high scores.
 
 The project features three themes: RGB, and separate options for both white and black. It’s structured for straightforward customization, allowing you to adjust game mechanics, styles, and controls as you see fit.
 
